@@ -1,0 +1,12 @@
+[
+  {
+    "title": "Art One",
+    "preview": "art/art1.png",
+    "download": "art/art1.png"
+  },
+  {
+    "title": "Art Two",
+    "preview": "art/art2.png",
+    "download": "art/art2.png"
+  }
+]

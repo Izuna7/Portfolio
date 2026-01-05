@@ -45,3 +45,19 @@ fetch("gallery.json")
       }
     };
   });
+  
+const gallery = document.querySelector(".gallery");
+
+gallery.addEventListener("mouseover", e => {
+  if (e.target.tagName === "IMG") {
+    gallery.classList.add("img-hovering");
+    e.target.classList.add("is-hovered");
+  }
+});
+
+gallery.addEventListener("mouseout", e => {
+  if (e.target.tagName === "IMG") {
+    gallery.classList.remove("img-hovering");
+    e.target.classList.remove("is-hovered");
+  }
+});

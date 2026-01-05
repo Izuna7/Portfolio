@@ -105,17 +105,25 @@ p{
   border-radius: 12px;
    transition: transform 0.25s ease, box-shadow 0.25s ease;
    transition: filter 0.25s ease, transform 0.25s ease;
+  
 }
 
-.gallery:hover img {
+.gallery.img-hovering img {
   filter: blur(2px) brightness(0.8);
 }
 
-.gallery img:hover {
+/*.gallery img:hover {
  transform: translateY(-4px) scale(1.02) rotate(0.8deg);
   box-shadow: 0 25px 50px rgba(0,0,0,0.35);
   z-index: 10;
+  
+}*/
+
+.gallery.img-hovering img.is-hovered {
   filter: none;
+  transform: translateY(-4px) scale(1.02) rotate(0.8deg);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.35);
+  z-index: 10;
 }
 
 

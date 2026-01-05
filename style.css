@@ -1,99 +1,128 @@
+/* ---------- ROOT SCALE ---------- */
+html {
+  font-size: 100%; /* 16px base */
+  scroll-behavior: smooth;
+}
+
 body {
+  min-height: 100vh;
+  margin: 0;
   background: linear-gradient(270deg, #292929, #181818, #1d1d1d);
   background-size: 600% 600%;
   animation: gradientShift 10s ease infinite;
-}
-.nav{
-    height: 80px;
-    border: 2px inset white; /* solid,dashed,dotted,double,inset,outset,groove,ridge*/
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 60px;
-    background-color: rgb(70, 211, 168);
-    background-image: url(art/turqu.png);
-    
-    
-}
-.nav ul{
-    display: flex;
-    align-items: center;      /* vertical alignment */
-    justify-content: right;  /* horizontal alignment */
-    gap: 100px;
-    padding-right: 5%;
-    margin-top: 1%;
-    list-style: none;
-
+  font-family: system-ui, sans-serif;
 }
 
+/* ---------- NAV ---------- */
+.nav {
+  min-height: 5rem;              /* instead of height: 80px */
+  padding-inline: 2rem;
+  border: 0.125rem inset white;
+  border-top-left-radius: 0.3rem;
+  border-bottom-left-radius: 3.75rem;
 
-ul a{
-    font-size: large;
-    font-family: "Slackey" , sans-serif;
-    text-decoration: none;
-    background: linear-gradient(90deg, #2baf53, #33ff05);
-    background-clip:text;
-    -webkit-text-fill-color: transparent;
-    animation: Textpulse 2s ease-in-out infinite alternate;
-    
+  background-color: rgb(70, 211, 168);
+  background-image: url(art/turqu.png);
+  /* background-size: cover; */
+  /* background-position: center; */
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(1.5rem, 5vw, 6rem);
 }
 
-p{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: "Slackey" , sans-serif;
-    background-image: url(art/turqu.png);
-    background-repeat: no-repeat;
-    background-size: cover; 
-    height: 100px;
-    width: 100px;
-    text-align: center;
-    border: 2px inset white; /* solid,dashed,dotted,double,inset,outset,groove,ridge*/
-    border-radius: 5px;
-    background-color: rgb(215, 129, 44);
-    color: rgb(60, 224, 129);
-    margin: 20px;
-      
+.nav ul {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 4vw, 5rem);
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.flexy{
-    display: flex;
-    justify-content: center; /* X axis */
-    align-items:center; /* Y axis */
-    align-content: flex-start;
-    flex-wrap:wrap;
-    row-gap: 5px;
-    column-gap: 20px;
-    overflow-y:scroll;
-   /* padding: 15px;*/
-    height: 500px;
-    margin-top: 20px;
-    border: 3px solid white; /* solid,dashed,dotted,double,inset,outset,groove,ridge*/
-    border-radius: 15px;
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.2);
+/* ---------- NAV LINKS ---------- */
+ul a {
+  font-size: clamp(1rem, 1.2vw, 1.25rem);
+  font-family: "Slackey", sans-serif;
+  text-decoration: none;
 
+  background: linear-gradient(90deg, #2baf53, #33ff05);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 
+  animation: Textpulse 2s ease-in-out infinite alternate;
 }
 
-.links{
-    border: 2px inset white; /* solid,dashed,dotted,double,inset,outset,groove,ridge*/
-    border-radius: 5px;
-    height: 20px;
-    width: 30px;
-    background-color: antiquewhite;
+/* ---------- CARDS / P ---------- */
+p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Slackey", sans-serif;
+  font-size: 1rem;
+  text-align: center;
+
+  width: clamp(5rem, 12vw, 6.5rem);
+  aspect-ratio: 1 / 1;
+
+  margin: 1.25rem;
+  padding: 0.5rem;
+
+  border: 0.125rem inset white;
+  border-radius: 0.4rem;
+
+  background-image: url(art/turqu.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgb(215, 129, 44);
+
+  color: rgb(60, 224, 129);
 }
 
-.material-symbols-outlined{
-    color: #3dff46;
-    size: 50px;
+/* ---------- FLEX CONTAINER ---------- */
+.flexy {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+
+  gap: clamp(0.5rem, 2vw, 1.5rem);
+  padding: 1rem;
+
+  max-height: 60vh;
+  overflow-y: auto;
+
+  margin-top: 1.5rem;
+  border-radius: 1rem;
+
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border: 0.0625rem solid rgba(255,255,255,0.2);
 }
 
+/* ---------- ICON LINKS ---------- */
+.links {
+  width: 2rem;
+  height: 1.5rem;
+  border: 0.125rem inset white;
+  border-radius: 0.3rem;
+  background-color: antiquewhite;
+}
+
+.material-symbols-outlined {
+  font-size: 2rem;
+  color: #3dff46;
+}
+
+/* ---------- GALLERY ---------- */
 .gallery {
-  column-width: 250px;
+  column-width: clamp(12rem, 20vw, 18rem);
   column-gap: 1rem;
   width: 100%;
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
+  margin: 1rem;
    transition: transform 0.5s ease, box-shadow 0.25s ease;
 }
 
@@ -102,36 +131,75 @@ p{
   height: auto;
   margin-bottom: 1rem;
   break-inside: avoid;
-  border-radius: 12px;
-   transition: transform 0.25s ease, box-shadow 0.25s ease;
-   transition: filter 0.25s ease, transform 0.25s ease;
-  
+
+  border-radius: 0.75rem;
+  opacity: 0;
+
+  transition:
+    filter 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.gallery img.loaded {
+  opacity: 1;
 }
 
 .gallery.img-hovering img {
-  filter: blur(2px) brightness(0.8);
+  filter: blur(0.125rem) brightness(0.8);
 }
-
-/*.gallery img:hover {
- transform: translateY(-4px) scale(1.02) rotate(0.8deg);
-  box-shadow: 0 25px 50px rgba(0,0,0,0.35);
-  z-index: 10;
-  
-}*/
 
 .gallery.img-hovering img.is-hovered {
   filter: none;
-  transform: translateY(-4px) scale(1.02) rotate(0.8deg);
-  box-shadow: 0 25px 50px rgba(0,0,0,0.35);
+  transform: translateY(-0.25rem) scale(1.02) rotate(0.8deg);
+  box-shadow: 0 1.5rem 3rem rgba(0,0,0,0.35);
   z-index: 10;
 }
 
-
-@keyframes Textpulse {
- from {text-shadow:10px 10px 0 rgba(0,0,0,0.5),0 0 0 rgba(0,0,0,0.2);}
- to {text-shadow:10px 10px 0 rgba(0,0,0,0.5),0 0 12px rgba(68, 255, 0, 0.6);}
+/* ---------- LIGHTBOX ---------- */
+#lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+  display: flex; 
 }
 
+#lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  transform: scale(0.92);
+  transition: transform 0.35s ease;
+}
+
+/* when active */
+#lightbox.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#lightbox.active img {
+  transform: scale(1);
+}
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes Textpulse {
+  from {
+    text-shadow:
+      0.6rem 0.6rem 0 rgba(0,0,0,0.5),
+      0 0 0 rgba(0,0,0,0.2);
+  }
+  to {
+    text-shadow:
+      0.6rem 0.6rem 0 rgba(0,0,0,0.5),
+      0 0 0.75rem rgba(68, 255, 0, 0.6);
+  }
+}
 
 @keyframes gradientShift {
   0% { background-position: 0% 50%; }
@@ -139,35 +207,48 @@ p{
   100% { background-position: 0% 50%; }
 }
 
+/* ---------- DARK MODE ---------- */
 @media (prefers-color-scheme: dark) {
   body {
     background: #181818;
   }
 }
-html {
-  scroll-behavior: smooth;
+
+#downloadBtn {
+  position: absolute;
+  bottom: 2rem;
+  padding: 0.6em 1.2em;
+
+  font-family: "Slackey", sans-serif;
+  font-size: 1rem;
+
+  color: #33ff05;
+  text-decoration: none;
+
+  border: 0.19rem inset #33ff05;
+  border-radius: 0.4rem;
+
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(6px);
+
+  transition: transform 0.2s ease, background 0.2s ease;
+  animation: pulse 3s ease-in-out infinite;
 }
 
-#lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.85);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
+@keyframes pulse {
+0% { box-shadow: 0 0 0 0 rgba(0, 255, 85, 0.6); }
+70% { box-shadow: 0 0 0 10px rgba(12, 138, 40, 0); }
+100% { box-shadow: 0 0 0 0 rgba(255,0,0,0); }}
+/* animation: pulse 2s ease-in infinite; */
+
+#downloadBtn:hover {
+  background: rgba(0,0,0,0.7);
+  transform: translateY(-2px);
 }
 
-#lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-}
-
-.gallery img {
-  opacity: 0;
-}
-
-.gallery img.loaded {
-  opacity: 1;
+#downloadBtn:active{
+  transform: translateY(2px);
+  color: #2baf53;
+  border-color: #2baf53;
 }
 

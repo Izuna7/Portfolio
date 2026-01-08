@@ -8,5 +8,10 @@
     "title": "Art Two",
     "preview": "art/art2.png",
     "download": "art/art2.png"
+  },
+  {
+    "title": "Art Three",
+    "preview": "art/landscapeP.png",
+    "download": "art/landscape2.zip"
   }
 ]
